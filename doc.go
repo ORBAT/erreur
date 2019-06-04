@@ -8,7 +8,7 @@
 // mainly produced with something like Errorf:
 // 	connErr := fmt.Errorf("error code %d when connecting to address %s", errCode, someAddr)
 //
-// Now to get all the context into a structured log line, you now need to either log the error while the context is in scope (and depending on what you're writing this might not be sensible), return the context somehow, or make do with what you have:
+// To get all the context into a structured log line, you now need to either log the error while the context is in scope (and depending on what you're writing this might not be sensible), return the context somehow, or make do with what you have:
 //
 // 	zap.NewExample().Error("failed to load data", zap.Error(connErr), zap.String("addr", someAddr))
 // 	Output: {"level":"error","msg":"failed to load data","error":"error code 1234 when connecting to address example.com","addr":"example.com"}
